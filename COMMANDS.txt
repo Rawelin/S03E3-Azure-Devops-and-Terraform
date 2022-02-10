@@ -1,0 +1,18 @@
+dotnet --version
+dotnet new
+dotnet new webapi --framework netcoreapp3.1 -n weatherapi
+
+dotnet build
+dotnet run
+
+code -r weatherapi
+
+docker build -t rawelin/weatherapi .
+docker run -p 8080:80 rawelin/weatherapi
+
+docker ps
+docker stop {{CONTAINER ID}}
+
+docker push rawelin/weatherapi
+
+git init
